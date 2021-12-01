@@ -1,4 +1,6 @@
 import { Box, Heading, Text, Button, Link } from "@chakra-ui/react";
+import {FaHome} from "react-icons/fa"
+
 
 const NotFound = () => {
   return (
@@ -26,7 +28,7 @@ const NotFound = () => {
             color="white"
             variant="solid"
           >
-            Go to Home
+           <FaHome size={25}/>
           </Button>
         </Link>
       </Box>
