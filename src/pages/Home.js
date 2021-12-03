@@ -22,7 +22,12 @@ import Seo from "../components/Seo";
 const Home = () => {
   return (
     <Layout>
-      <Seo />
+      <Seo
+        title="Material Dukan | Best Store for Hardware & your house building"
+        description="Contact us material duakan for cement store and hardware store."
+        keyphrase="Material Dukan "
+        keywords=""
+      />
       <Container maxW={"7xl"}>
         <Stack
           align={"center"}
@@ -74,7 +79,7 @@ const Home = () => {
                 bg={"green.400"}
                 _hover={{ bg: "green.700" }}
               >
-                <Link href=" https://api.whatsapp.com/send?phone=919666022577&text=Hello We want Some More Details in the Products">
+                <Link href=" https://api.whatsapp.com/send?phone=917288018339&text=Hello We want Some More Details in the Products">
                   <FaWhatsapp size={30} />
                 </Link>
               </Button>
@@ -87,7 +92,7 @@ const Home = () => {
                 bg={"green.400"}
                 _hover={{ bg: "green.700" }}
               >
-                <Link href="tel:+919666022577">
+                <Link href="tel:+917288018339">
                   <FaPhone size={30} />
                 </Link>
               </Button>

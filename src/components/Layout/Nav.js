@@ -258,14 +258,9 @@ import {
       label: 'Products',
       children: [
         {
-          label: 'Explore Design Work',
-          subLabel: 'Trending Design to inspire you',
-          href: '#',
-        },
-        {
-          label: 'New & Noteworthy',
-          subLabel: 'Up-and-coming Designers',
-          href: '#',
+          label: 'Products',
+          subLabel: 'Every Product is listed here',
+          href: '/products',
         },
       ],
     },
