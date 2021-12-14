@@ -1,10 +1,11 @@
+import {useState , useContext} from "react"
 import {
   Flex,
   Box,
   FormControl,
   FormLabel,
   Input,
-  Checkbox,
+  useToast,
   Stack,
   Link,
   Button,
@@ -13,12 +14,33 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
+import Seo from "../../components/Seo";
 import Layout from "../../components/Layout/Layout";
+import {UserContext} from "../../context/userContext"
+import firebase from "firebase/app";
 
 const Signup = () => {
+  const context = useContext(UserContext)
+  const [email , setEmail] = useState("")
+  const [password , setpassword] = useState("")
+
+  const handleSignup = () =>{
+    firebase
+    .auth()
+    .signInWithEmailAndPassword(email , password)
+    .then(res=>{
+      context.setUser({email: res.user.email, uid: res.user.uid}) 
+    }).catch(error=>{
+
+    })
+  }
   return (
     <>
       <Layout>
+        <Seo
+          title="Material Dukan | Signup"
+          description="Material Dukan Signup is here."
+        />
         <Flex
           minH={"100vh"}
           align={"center"}
@@ -49,14 +71,6 @@ const Signup = () => {
                   <Input type="password" />
                 </FormControl>
                 <Stack spacing={10}>
-                  <Stack
-                    direction={{ base: "column", sm: "row" }}
-                    align={"start"}
-                    justify={"space-between"}
-                  >
-                    <Checkbox>Remember me</Checkbox>
-                    <Link color={"blue.400"}>Forgot password?</Link>
-                  </Stack>
                   <Button
                     bg={"blue.400"}
                     color={"white"}
@@ -64,7 +78,7 @@ const Signup = () => {
                       bg: "blue.500",
                     }}
                   >
-                    Sign in
+                    Signup
                   </Button>
                 </Stack>
               </Stack>

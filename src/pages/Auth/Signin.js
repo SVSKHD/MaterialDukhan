@@ -14,11 +14,17 @@ import {
   } from "@chakra-ui/react";
   
   import Layout from "../../components/Layout/Layout";
-  
+import Seo from "../../components/Seo";
+
+
   const Signin = () => {
     return (
       <>
         <Layout>
+          <Seo 
+          title="Material Dukan | Signin"
+          description="Material Dukan Signin is here."
+          />
           <Flex
             minH={"100vh"}
             align={"center"}
@@ -54,8 +60,7 @@ import {
                       align={"start"}
                       justify={"space-between"}
                     >
-                      <Checkbox>Remember me</Checkbox>
-                      <Link color={"blue.400"}>Forgot password?</Link>
+                     
                     </Stack>
                     <Button
                       bg={"blue.400"}

@@ -1,10 +1,15 @@
 import { Box, Heading, Text, Button, Link } from "@chakra-ui/react";
-import {FaHome} from "react-icons/fa"
-
+import { FaHome } from "react-icons/fa";
+import Seo from "../components/Seo";
 
 const NotFound = () => {
   return (
     <>
+      <Seo
+        title="Material Dukhan | Not Found Page"
+        description="Material Dukan Page is not found"
+        keywords="Material Dukan , cement store"
+      />
       <Box textAlign="center" py={10} px={6}>
         <Heading
           display="inline-block"
@@ -28,7 +33,7 @@ const NotFound = () => {
             color="white"
             variant="solid"
           >
-           <FaHome size={25}/>
+            <FaHome size={25} />
           </Button>
         </Link>
       </Box>

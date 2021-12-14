@@ -17,6 +17,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { FaWhatsapp, FaPhone } from "react-icons/fa";
+import MD1 from "../images/md (1).jpg"
 import Seo from "../components/Seo";
 
 const Home = () => {
@@ -126,24 +127,24 @@ const Home = () => {
                 aria-label={"Play Button"}
                 variant={"ghost"}
                 _hover={{ bg: "transparent" }}
-                icon={<PlayIcon w={12} h={12} />}
+                icon={<FaWhatsapp size={25}/>}
                 size={"lg"}
-                color={"white"}
+                color={"green"}
                 position={"absolute"}
                 left={"50%"}
                 top={"50%"}
                 transform={"translateX(-50%) translateY(-50%)"}
               />
+              <Link  href="https://api.whatsapp.com/send?phone=917288018339&text=Hello We want Some More Details in the Products">
               <Image
                 alt={"Hero Image"}
                 fit={"cover"}
                 align={"center"}
                 w={"100%"}
                 h={"100%"}
-                src={
-                  "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80"
-                }
+                src={MD1}
               />
+              </Link>
             </Box>
           </Flex>
         </Stack>
@@ -153,6 +154,7 @@ const Home = () => {
           <Heading>Products</Heading>
         </Center>
         <br />
+        <hr/>
       </Container>
     </Layout>
   );
