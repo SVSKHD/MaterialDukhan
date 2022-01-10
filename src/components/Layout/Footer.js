@@ -1,7 +1,41 @@
+import { useState, useEffect } from "react";
 import { FaWhatsapp, FaPhone } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { getCategories } from "../functions/Categories";
 
 const Footer = () => {
+
+  const Data = [
+    {
+      name: "Home",
+      path: "/",
+    },
+    {
+      name: "Faq",
+      path: "/faq",
+    },
+    {
+      name: "Products",
+      path: "/products",
+    },
+    {
+      name: "Contact",
+      path: "/contact",
+    },
+  ];
+  useEffect(() => {
+    loadCategories();
+  }, []);
+  const loadCategories = () => {
+    setLoading(true);
+    getCategories().then((res) => {
+      setCategories(res.data);
+      setLoading(false);
+    });
+  };
+  const [Categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const data = new Date().getFullYear();
   return (
     <footer class="container py-5">
@@ -47,32 +81,28 @@ const Footer = () => {
           </ul>
         </div>
         <div class="col-6 col-md">
-          <h5>Resources</h5>
+          <h3>Categories</h3>
           <ul class="list-unstyled text-small">
-            <li>
-              <a class="text-muted text-decoration-none " href="#">
-                Resource
-              </a>
-            </li>
-            <li>
-              <a class="text-muted text-decoration-none " href="#">
-                Resource name
-              </a>
-            </li>
-            <li>
-              <a class="text-muted text-decoration-none " href="#">
-                Another resource
-              </a>
-            </li>
-            <li>
-              <a class="text-muted text-decoration-none " href="#">
-                Final resource
-              </a>
-            </li>
+            {Categories.map((c, i) => (
+              <li key={i}>
+                <a class="text-muted text-decoration-none " href={c.slug}>
+                  {c.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         <div class="col-6 col-md">
           <h3>Navigate</h3>
+          <ul class="list-unstyled text-small">
+          {Data.map((m,i)=>(
+            <li key={i}>
+            <a class="text-muted text-decoration-none " href={m.path}>
+              {m.name}
+            </a>
+          </li>
+          ))}
+           </ul>
         </div>
         <div class="col-6 col-md">
           <h3>Contact</h3>
@@ -87,7 +117,11 @@ const Footer = () => {
               </Link>
             </button>
             <button type="button" class="btn btn-light">
-              <Link className="text-decoration-none" to="tel:+917288018339" target="_blank">
+              <Link
+                className="text-decoration-none"
+                to="tel:+917288018339"
+                target="_blank"
+              >
                 <FaPhone size={35} />
               </Link>
             </button>
