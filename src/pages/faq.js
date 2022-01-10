@@ -4,6 +4,7 @@ const Faq = () =>{
 return(
     <>
     <Layout>
+
     </Layout>
     </>
 )
