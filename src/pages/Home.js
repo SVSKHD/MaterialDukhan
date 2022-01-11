@@ -79,7 +79,7 @@ const Home = () => {
             <hr />
             <Carousel responsive={responsive}>
               {images.map((path, i) => (
-                <div>
+                <div key={i}>
                   <img src={path.image} alt={path.alt} />
                 </div>
               ))}

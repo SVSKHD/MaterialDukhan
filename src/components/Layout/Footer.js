@@ -80,18 +80,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div class="col-6 col-md">
-          <h3>Categories</h3>
-          <ul class="list-unstyled text-small">
-            {Categories.map((c, i) => (
-              <li key={i}>
-                <a class="text-muted text-decoration-none " href={c.slug}>
-                  {c.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        
         <div class="col-6 col-md">
           <h3>Navigate</h3>
           <ul class="list-unstyled text-small">
