@@ -94,6 +94,18 @@ const Footer = () => {
            </ul>
         </div>
         <div class="col-6 col-md">
+          <h3>Categories</h3>
+          <ul class="list-unstyled text-small">
+          {Categories.map((m,i)=>(
+            <li key={i}>
+            <a class="text-muted text-decoration-none " href={m.title}>
+              {m.name}
+            </a>
+          </li>
+          ))}
+           </ul>
+        </div>
+        <div class="col-6 col-md">
           <h3>Contact</h3>
           <div class="btn-group" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-light">
