@@ -6,9 +6,12 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Faq from "./pages/faq";
 import NotFound from "./pages/NotFound";
-// Auth
-import Signup from "./pages/Auth/Signup";
-import Signin from "./pages/Auth/Signin";
+// crud
+import ProductCrud from "./pages/crud/Product"
+import CategoryCrud from "./pages/crud/Category";
+// // Auth
+// import Signup from "./pages/Auth/Signup";
+// import Signin from "./pages/Auth/Signin";
 
 
 import Products from "./pages/Products";
@@ -24,8 +27,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/contact" component={Contact} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/signin" component={Signin} />
+          <Route exact path="/category/crud" component={CategoryCrud}/>
+          <Route exact path="/product/crud" component={ProductCrud}/>
           <Route exact path="/products" component={Products} />
           <Route exact path="/product/:name" component={Product} />
           <Route exact path="/faq" component={Faq} />

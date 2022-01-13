@@ -72,11 +72,14 @@ const Home = () => {
             </div>
           </div>
           <div className="container-fluid">
+            <div className="container">
             <hr />
             <h2>Our Products</h2>
-            <hr />
-            {/* cardslist */}
-            <hr />
+             <div className="row">
+               {<div></div>}
+             </div>
+            </div>
+           
             <Carousel responsive={responsive}>
               {images.map((path, i) => (
                 <div key={i}>
@@ -84,7 +87,7 @@ const Home = () => {
                 </div>
               ))}
             </Carousel>
-            <hr />
+          
           </div>
         </Layout>
       </div>
