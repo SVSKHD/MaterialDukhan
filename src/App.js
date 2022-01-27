@@ -19,7 +19,7 @@ import Product from "./pages/Product";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
+import 'react-multi-carousel/lib/styles.css';
 
 function App() {
   return (

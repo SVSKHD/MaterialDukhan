@@ -1,5 +1,9 @@
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout/Layout";
-import Carousel from "react-multi-carousel";
+import Carousel from "react-grid-carousel";
+
+import ProductCard from "../components/cards/ProductCard";
+import axios from "axios";
 
 import MD1 from "../images/md (1).jpg";
 import MD2 from "../images/md (2).jpg";
@@ -8,6 +12,17 @@ import MD4 from "../images/md (4).jpg";
 import MD5 from "../images/md (5).jpg";
 
 const Home = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    getdata();
+  }, []);
+  const getdata = () => {
+    axios.get(`${process.env.REACT_APP_API}/allproducts`).then((result) => {
+      setProducts(result.data);
+      console.log(result.data);
+      console.log(process.env.REACT_APP_API);
+    });
+  };
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -73,21 +88,25 @@ const Home = () => {
           </div>
           <div className="container-fluid">
             <div className="container">
-            <hr />
-            <h2>Our Products</h2>
-             <div className="row">
-               {<div></div>}
-             </div>
+              <hr />
+              <h2>Our Products</h2>
+              <hr />
+              <Carousel cols={3} rows={1} gap={10} loop>
+                {products.map((m, i) => (
+                    <Carousel.Item key={i}>
+                      <ProductCard p={m} />
+                    </Carousel.Item>
+                ))}
+              </Carousel>
             </div>
-           
-            <Carousel responsive={responsive}>
+            <br style={{ marginBottom: "2rem" }} />
+            <Carousel cols={3} rows={1} gap={10} loop>
               {images.map((path, i) => (
-                <div key={i}>
+                <Carousel.Item key={i}>
                   <img src={path.image} alt={path.alt} />
-                </div>
+                </Carousel.Item>
               ))}
             </Carousel>
-          
           </div>
         </Layout>
       </div>
